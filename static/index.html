@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EMOTIA — AI Emotion Intelligence</title>
+
+    <meta name="description"
+          content="Discover the emotions hidden in your words with EMOTIA AI.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body>
+
+    <div class="background">
+        <div class="aurora aurora-one"></div>
+        <div class="aurora aurora-two"></div>
+        <div class="aurora aurora-three"></div>
+        <canvas id="particles"></canvas>
+    </div>
+
+    <div class="app">
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar">
+
+            <a href="/" class="brand">
+                <div class="brand-icon">
+                    <span>✳</span>
+                </div>
+
+                <div class="brand-name">
+                    EMOTIA
+                    <span>AI EMOTION INTELLIGENCE</span>
+                </div>
+            </a>
+
+            <div class="nav-right">
+
+                <div class="status">
+                    <span class="status-dot"></span>
+                    <span id="apiStatus">CONNECTING</span>
+                </div>
+
+                <a href="#analyzer" class="nav-button">
+                    Try EMOTIA <span>↗</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- HERO -->
+
+        <main>
+
+            <section class="hero">
+
+                <div class="hero-label">
+                    <span class="label-icon">✦</span>
+                    UNDERSTANDING HUMAN EMOTION
+                    <span class="label-line"></span>
+                </div>
+
+                <h1>
+                    Your words.<br>
+
+                    <span class="gradient-text">
+                        Their emotions.
+                    </span>
+                </h1>
+
+                <p class="hero-description">
+                    Every sentence carries a feeling.
+                    Discover the emotion behind your words
+                    with intelligent AI-powered text analysis.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#analyzer" class="primary-button">
+                        Analyze your text
+                        <span>↗</span>
+                    </a>
+
+                    <div class="hero-note">
+                        <span class="tiny-dot"></span>
+                        Powered by BiGRU deep learning
+                    </div>
+
+                </div>
+
+
+                <!-- FLOATING EMOTION ORBS -->
+
+                <div class="emotion-orbit orbit-one">
+                    <div class="orbit-icon">😊</div>
+                    <span>JOY</span>
+                </div>
+
+                <div class="emotion-orbit orbit-two">
+                    <div class="orbit-icon">💜</div>
+                    <span>LOVE</span>
+                </div>
+
+                <div class="emotion-orbit orbit-three">
+                    <div class="orbit-icon">🌧️</div>
+            <span>SADNESS</span>
+                </div>
+
+                <div class="emotion-orbit orbit-four">
+                    <div class="orbit-icon">⚡</div>
+                    <span>ANGER</span>
+                </div>
+
+                <div class="hero-bottom">
+                    <span>01 / UNDERSTAND</span>
+                    <span>02 / ANALYZE</span>
+                    <span>03 / DISCOVER</span>
+                </div>
+
+            </section>
+
+
+            <!-- ANALYZER -->
+
+            <section class="analyzer-section" id="analyzer">
+
+                <div class="section-heading">
+
+                    <div>
+                        <div class="eyebrow">
+                            <span class="tiny-dot"></span>
+                            EMOTION ANALYZER
+                        </div>
+
+                        <h2>
+                            What's on your mind?
+                        </h2>
+
+                        <p>
+                            Write something. Let AI uncover the feeling.
+                        </p>
+                    </div>
+
+                    <div class="section-number">
+                        ANALYSIS / 001
+                    </div>
+
+                </div>
+
+
+                <div class="workspace">
+
+                    <!-- INPUT CARD -->
+
+                    <div class="input-card">
+
+                        <div class="card-top">
+
+                            <div class="card-title">
+                                <span class="card-icon">✎</span>
+                                YOUR TEXT
+                            </div>
+
+                            <span class="card-tag">
+                                TEXT INPUT
+                            </span>
+
+                        </div>
+
+
+                        <textarea
+                            id="textInput"
+                            maxlength="2000"
+                            placeholder="I finally achieved something I have been working towards for months. I can't stop smiling..."
+                            spellcheck="false"
+                        ></textarea>
+
+
+                        <div class="input-footer">
+
+                            <span id="charCount">
+                                0 / 2000
+                            </span>
+
+                            <button id="clearButton" class="clear-button">
+                                Clear text
+                            </button>
+
+                        </div>
+
+
+                        <div class="examples">
+
+                            <span class="examples-label">
+                                TRY AN EXAMPLE
+                            </span>
+
+                            <div class="example-buttons">
+
+                                <button class="example-chip" data-text="I finally achieved my dream. I am so happy and excited!">
+                                    <span>😊</span> Joy
+                                </button>
+
+                                <button class="example-chip" data-text="I miss someone who used to mean everything to me.">
+                                    <span>🌧️</span> Sadness
+                                </button>
+
+                                <button class="example-chip" data-text="I am so frustrated with everything happening today.">
+                                    <span>⚡</span> Anger
+                                </button>
+
+                                <button class="example-chip" data-text="I feel lucky to have someone who understands me and loves me.">
+                                    <span>💜</span> Love
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <button id="analyzeButton" class="analyze-button">
+
+                            <span class="button-content">
+                                <span class="button-spark">✦</span>
+                                Analyze emotion
+                                <span class="button-arrow">↗</span>
+                            </span>
+
+                            <span class="button-loading">
+                                <span class="spinner"></span>
+                                Analyzing your emotions...
+                            </span>
+
+                        </button>
+
+
+                        <div class="privacy-note">
+                            <span>✧</span>
+                            Your text is analyzed by your AI model.
+                        </div>
+
+                    </div>
+
+
+                    <!-- RESULT CARD -->
+
+                    <div class="result-card" id="resultCard">
+
+                        <div class="result-top">
+
+                            <div class="card-title">
+                                <span class="card-icon">✦</span>
+                                AI INSIGHTS
+                            </div>
+
+                            <span class="result-live">
+                                <span class="tiny-dot"></span>
+                                LIVE RESULT
+                            </span>
+
+                        </div>
+
+
+                        <!-- EMPTY STATE -->
+
+                        <div class="empty-state" id="emptyState">
+
+                            <div class="empty-visual">
+
+                                <div class="empty-ring ring-one"></div>
+                                <div class="empty-ring ring-two"></div>
+                                <div class="empty-ring ring-three"></div>
+
+                                <div class="empty-core">
+                                    <span>✳</span>
+                                </div>
+
+                            </div>
+
+                            <h3>
+                                Emotions, decoded.
+                            </h3>
+
+                            <p>
+                                Your emotional insight will appear here
+                                after analyzing your text.
+                            </p>
+
+                            <div class="empty-bottom">
+                                <span>WAITING FOR INPUT</span>
+                                <span>✦</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- RESULT -->
+
+                        <div class="prediction" id="prediction">
+
+                            <div class="prediction-label">
+                                PRIMARY EMOTION
+                            </div>
+
+                            <div class="emotion-display">
+
+                                <div class="emotion-symbol" id="emotionEmoji">
+                                    ✦
+                                </div>
+
+                                <div class="emotion-name-wrap">
+
+                                    <h3 id="emotionName">
+                                        Emotion
+                                    </h3>
+
+                                    <span id="emotionDescription">
+                                        Your emotional insight
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="confidence-section">
+
+                                <div class="confidence-heading">
+
+                                    <span>MODEL CONFIDENCE</span>
+
+                                    <strong id="confidenceValue">
+                                        0%
+                                    </strong>
+
+                                </div>
+
+                                <div class="confidence-track">
+                                    <div id="confidenceBar" class="confidence-fill"></div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="probability-section">
+
+                                <div class="probability-heading">
+                                    <span>EMOTION DISTRIBUTION</span>
+                                    <span>PROBABILITY</span>
+                                </div>
+
+                                <div id="probabilityList"></div>
+
+                            </div>
+
+
+                            <div class="result-bottom">
+                                <span>✦ BI-GRU MODEL</span>
+                                <span id="resultTimestamp">ANALYSIS COMPLETE</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ERROR -->
+
+                        <div class="error-state" id="errorState">
+
+                            <div class="error-icon">!</div>
+
+                            <h3>Something went wrong</h3>
+
+                            <p id="errorMessage">
+                                Unable to analyze your text.
+                            </p>
+
+                            <button id="retryButton" class="retry-button">
+                                Try again ↗
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                <a href="/" class="footer-brand">
+                    EMOTIA<span>✳</span>
+                </a>
+
+                <p>
+                    Intelligence that understands how you feel.
+                </p>
+
+                <div class="footer-right">
+                    BUILT WITH DEEP LEARNING
+                    <span>·</span>
+                    BI-GRU
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <div class="toast" id="toast"></div>
+
+    <script src="/static/app.js"></script>
+
+</body>
+</html>
